@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Transaction extends Model
 {
-    protected $fillable = [
-        'name', 'email', 'password', 'account_type'
-    ];
     
 }

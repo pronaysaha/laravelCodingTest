@@ -14,4 +14,12 @@ class Authenticate extends Middleware
     {
         return $request->expectsJson() ? null : route('login');
     }
+    Route::middleware(['auth'])->group(function () {
+        Route::get('/', 'TransactionController@index');
+        Route::get('/deposit', 'TransactionController@showDeposits');
+        Route::post('/deposit', 'TransactionController@deposit');
+        Route::get('/withdrawal', 'TransactionController@showWithdrawals');
+        Route::post('/withdrawal', 'TransactionController@withdraw');
+    });
+    
 }
